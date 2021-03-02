@@ -5,8 +5,7 @@ import App from './App';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import SearchEvent from '../src/pages/EventViews/SearchEvent';

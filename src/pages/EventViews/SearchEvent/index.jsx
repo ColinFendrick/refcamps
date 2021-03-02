@@ -1,33 +1,36 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import EventCard from '../../../components/EventCard';
+import SearchBars from '../../../components/SearchBars';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& > *': {
-      margin: theme.spacing(1),
-    },
+    flexgrow: 1,
+    margin: theme.spacing(8),
+  },
+  title: {
+    display: 'flex',
+    justifyContent: 'center',
+    fontSize: '50px',
+    fontWeight: 900,
+    margin: theme.spacing(4)
   },
 }));
 
-export default function ContainedButtons() {
+const SearchEvent = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <Button variant="contained">Default</Button>
-      <Button variant="contained" color="primary">
-        Primary
-      </Button>
-      <Button variant="contained" color="secondary">
-        Secondary
-      </Button>
-      <Button variant="contained" disabled>
-        Disabled
-      </Button>
-      <Button variant="contained" color="primary" href="#contained-buttons">
-        Link
-      </Button>
+      <div className={classes.title}>
+        <span>List of Events</span>
+      </div>
+      <div>
+        <SearchBars />
+        <EventCard />
+      </div>
     </div>
   );
 }
+
+export default SearchEvent;
