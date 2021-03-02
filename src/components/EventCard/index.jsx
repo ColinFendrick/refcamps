@@ -2,6 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import {
+  useHistory
+} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -9,18 +12,24 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     lineHeight: '30px',
     minHeight: '225px',
-    boxShadow: '1px 1px 10px #dddddd'
+    boxShadow: '1px 1px 10px #dddddd',
+    cursor: 'pointer',
   },
 }));
 
 const EventCard = () => {
   const classes = useStyles();
+  let history = useHistory();
+
+  const eventSignup = () => {
+    history.push("/eventSignup");
+  }
 
   return (
     <div>
       <Grid container spacing={5}>
         <Grid item lg={4}>
-          <Paper className={classes.paper}>
+          <Paper className={classes.paper} onClick={eventSignup}>
             <h1>Official Whistle</h1>
             <div>
               <span>Hosted By: Kathleen McGlynn</span>

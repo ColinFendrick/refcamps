@@ -10,11 +10,15 @@ import {
 import reportWebVitals from './reportWebVitals';
 import SearchEvent from '../src/pages/EventViews/SearchEvent';
 import SubmitEvent from '../src/pages/EventViews/SubmitEvent';
+import EventSignup from '../src/pages/EventViews/EventSignup';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
+        <Route path="/eventSignup">
+          <EventSignup />
+        </Route>
         <Route path="/submitEvent">
           <SubmitEvent />
         </Route>

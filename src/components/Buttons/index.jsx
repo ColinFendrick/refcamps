@@ -26,6 +26,7 @@ const Buttons = () => {
   const submitEvent = () => {
     history.push("/submitEvent");
   }
+  
   const searchEvent = () => {
     history.push("/searchEvent");
   }
